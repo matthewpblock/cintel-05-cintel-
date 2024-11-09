@@ -5,6 +5,9 @@ import random
 from datetime import datetime
 from faicons import icon_svg
 
+# --------------------------------------------
+# SET UP THE REACTIVE CONTENT
+# --------------------------------------------
 #set a constant UPDATE INTERVAL for all live data
 UPDATE_INTERVAL_SECS: int = 1
 
@@ -17,3 +20,32 @@ def reactive_calc_combined():
         latest_dictionary_entry = {"temp": temp, "timestamp": timestamp}
         
         return latest_dictionary_entry #Displays the results
+
+# ------------------------------------------------
+# Define the Shiny UI Page layout 
+# ------------------------------------------------
+ui.page_opts(title="Flying Penguin PyShiny Express Block: Live Data (Basic)", fillable=True) # Header
+with ui.sidebar(open="open"): # Sidebar
+    ui.h2("Flying Penguin Explorer", class_="text-center")
+    ui.p(
+        "A demonstration of real-time temperature readings by flying penguins.",
+        class_="text-center",
+    )
+
+ui.h2("Current Temperature")
+@render.text
+def display_temp():
+    """Get the latest reading and return a temperature string"""
+    latest_dictionary_entry = reactive_calc_combined()
+    return f"{latest_dictionary_entry['temp']} C"
+icon_svg("person-skating")
+ui.p("Too cold for me!")
+
+ui.hr() # Horizontal line
+
+ui.h2("Current Date and Time")
+@render.text
+def display_time():
+    """Get the latest reading and return a timestamp string"""
+    latest_dictionary_entry = reactive_calc_combined()
+    return f"{latest_dictionary_entry['timestamp']}"
