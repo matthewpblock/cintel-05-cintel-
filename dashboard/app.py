@@ -8,6 +8,9 @@ import random
 from datetime import datetime
 from faicons import icon_svg
 import pandas as pd
+import plotly.express as px
+from shinywidgets import render_plotly
+from scipy import stats
 
 #--------------------------------------------
 # Set up the data generator
