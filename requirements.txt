@@ -2,3 +2,6 @@ shiny
 shinylive
 faicons
 pandas
+plotly
+shinywidgets
+scipy
