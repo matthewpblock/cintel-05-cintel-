@@ -43,6 +43,9 @@ with ui.sidebar(open="open"):                                                   
         "A demonstration of real-time temperature readings by flying penguins.",
         class_="text-left",
     )
+    ui.hr()
+    ui.p("Original requirements completed. Pending recommended enhancements.", class_="text-left")
+    # Read the comments. Organize the code. When you get your version implemented, save it - use a good commit message to indicate you've recreated the functionality as requested. 
 
 #main content
 #--------------------------------------------
@@ -90,7 +93,7 @@ with ui.layout_columns():
         @render_plotly
         def display_plot():
             # Fetch from the reactive calc function
-            deque_snapshot, df, latest_dictionary_entry = reactive_calc_combined()      # I'm curious why we list all three here, but only use df below
+            deque_snapshot, df, latest_dictionary_entry = reactive_calc_combined()      # I'm curious why we list all three here, but only use df below. Could the other two be removed?
 
             # Ensure the DataFrame is not empty before plotting
             if not df.empty:
