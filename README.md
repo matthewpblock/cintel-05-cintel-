@@ -20,14 +20,15 @@ pip install -r requirements.txt
 ---------------------
 ## Usage
 ---------------------
-No inputs required. Dashboard is read-only.
+Change the input slider to adjust the frequency of temperature reading updates (in seconds)
+The other slider adjusts the number of data points plotted on the scatterplot at the bottom of the page.
 
 ---------------------
 ## Features
 ---------------------
 Dark mode may be activated (or deactivated) with the icon at the top left of the sidebar.
 Current readings are available in boxes at the top.
-A table of recent readings is logged in the middle, holding only the most recent seven readings.
+A table of recent readings is logged in the middle, holding only the most recent 60 readings.
 The data from this table is displayed in the chart at the bottom with a regression line.
 Charts can be expanded to full screen by clicking the icon that appears at the bottom right when you hover over the chart.
 
