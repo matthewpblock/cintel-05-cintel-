@@ -17,7 +17,6 @@ from scipy import stats
 #--------------------------------------------
 # Store the latest data up to the defined amount
 DEQUE_SIZE: int = 60
-# DEQUE_SIZE: int = input.deque_size()
 reactive_value_wrapper = reactive.value(deque(maxlen=DEQUE_SIZE))
 
 @reactive.calc()
@@ -51,8 +50,11 @@ with ui.sidebar(open="open"):                                                   
     ui.input_slider("update_interval", "Update Interval (seconds):", min=1, max=30, value=2)
 
     ui.hr()
-    ui.p("Original requirements completed. Pending recommended enhancements.", class_="text-left")
-    # Read the comments. Organize the code. When you get your version implemented, save it - use a good commit message to indicate you've recreated the functionality as requested. 
+    ui.p(
+        "Built with ",
+        ui.a("Shiny for Python", href="https://shiny.posit.co/py/", target="_blank"),
+        class_="text-left"
+    )
 
 # Main content
 #--------------------------------------------
